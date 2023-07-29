@@ -1,0 +1,49 @@
+
+let capture;
+
+let rupak_img;
+
+function setup(){
+    createCanvas(800,800);
+    console.log('Setup function');
+
+ rupak_img = loadImage ('images/rupak.jpg')
+
+ capture = createCapture(VIDEO);
+    capture.hide();
+
+}
+//generating random color
+function getRandomArbitrary (min,max){
+    return Math.random () * (max-min) + min;  
+}
+
+function draw (){
+    
+    //point
+    point(20,20)
+
+    //line
+    line (200,200 ,300 ,300);
+
+    //triangle
+    triangle(100,200,300,400,150,450);
+
+    //rectangle 
+    rect ( 500,200,300,100);
+
+    //circle
+    ellipse(600,300,100,100);
+    
+
+    r=getRandomArbitrary(0,255);
+    g=getRandomArbitrary(0,255);
+    b=getRandomArbitrary(0,255);
+    fill (r,g,b);
+    rect(mouseX,mouseY,50,50);
+
+     image (rupak_img, mouseX, mouseY,100,100);
+  
+     image (capture, 0, 0,500,500);
+
+}
